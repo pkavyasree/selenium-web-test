@@ -18,7 +18,9 @@ public class TestUI {
 	@Test
 	public void test02Chrome(){
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+		WebDriver driver = new ChromeDriver(chromeOptions);
 		driver.get("http://bimarian.com");
 		System.out.println("Chrome browser opened and navigated to Bimarian site");
 		driver.quit();
